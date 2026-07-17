@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:DigiDoc/firebase/auth.dart';
-import 'package:DigiDoc/config.dart';
-import 'package:DigiDoc/pages/starterpage.dart';
-import 'package:DigiDoc/pages/symptomsscreen.dart';
-import 'package:DigiDoc/pages/bookinglistpage.dart';
+import 'package:digidoc/firebase/auth.dart';
+import 'package:digidoc/config.dart';
+import 'package:digidoc/pages/starterpage.dart';
+import 'package:digidoc/pages/symptomsscreen.dart';
+import 'package:digidoc/pages/bookinglistpage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

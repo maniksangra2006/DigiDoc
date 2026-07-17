@@ -1,6 +1,6 @@
-import 'package:DigiDoc/firebase_options.dart';
-import 'package:DigiDoc/pages/rednder.dart';
-import 'package:DigiDoc/firebase/auth.dart';
+import 'package:digidoc/firebase_options.dart';
+import 'package:digidoc/pages/rednder.dart';
+import 'package:digidoc/firebase/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

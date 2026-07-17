@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:DigiDoc/pages/doctorhomepage.dart';
-import 'package:DigiDoc/pages/starterpage.dart';
+import 'package:digidoc/pages/doctorhomepage.dart';
+import 'package:digidoc/pages/starterpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:DigiDoc/functions/api_service.dart';
-import 'package:DigiDoc/config.dart';
-import 'package:DigiDoc/firebase/auth.dart';
+import 'package:digidoc/functions/api_service.dart';
+import 'package:digidoc/config.dart';
+import 'package:digidoc/firebase/auth.dart';
 
 class DoctorSignIn extends StatefulWidget {
   const DoctorSignIn({super.key});

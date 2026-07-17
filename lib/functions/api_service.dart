@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:DigiDoc/config.dart';
+import 'package:digidoc/config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;

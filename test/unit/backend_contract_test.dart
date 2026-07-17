@@ -5,7 +5,7 @@
 // is handled properly.
 
 import 'dart:convert';
-import 'package:DigiDoc/widgets/listOfSuggestions.dart';
+import 'package:digidoc/widgets/listOfSuggestions.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

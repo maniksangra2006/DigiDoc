@@ -3,7 +3,7 @@
 // These tests ensure that the symptom suggestions used in the UI exactly match
 // the keys used in the ML symptom map, preventing silent prediction failures.
 
-import 'package:DigiDoc/widgets/listOfSuggestions.dart';
+import 'package:digidoc/widgets/listOfSuggestions.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// The canonical symptom map from homepage.dart — keys must match suggestions.

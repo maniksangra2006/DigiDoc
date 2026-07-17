@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:DigiDoc/functions/api_service.dart';
-import 'package:DigiDoc/config.dart';
-import 'package:DigiDoc/firebase/auth.dart';
-import 'package:DigiDoc/pages/starterpage.dart';
-import 'package:DigiDoc/pages/bookinglistpage.dart';
+import 'package:digidoc/functions/api_service.dart';
+import 'package:digidoc/config.dart';
+import 'package:digidoc/firebase/auth.dart';
+import 'package:digidoc/pages/starterpage.dart';
+import 'package:digidoc/pages/bookinglistpage.dart';
 
 class DoctorHome extends StatefulWidget {
   final String spec;

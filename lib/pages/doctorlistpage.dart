@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:DigiDoc/functions/api_service.dart';
-import 'package:DigiDoc/pages/bookingformpage.dart';
+import 'package:digidoc/functions/api_service.dart';
+import 'package:digidoc/pages/bookingformpage.dart';
 
 class DoctorListPage extends StatefulWidget {
   final String specialty;

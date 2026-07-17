@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
-import 'package:DigiDoc/pages/doctorlistpage.dart';
+import 'package:digidoc/pages/doctorlistpage.dart';
 
 class PredictedPage extends StatefulWidget {
   final String disease;

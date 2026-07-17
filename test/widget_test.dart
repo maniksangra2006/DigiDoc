@@ -3,9 +3,9 @@
 // Tests verify core UI rendering without requiring Firebase or network access.
 // Firebase-dependent widgets are tested separately in unit/ tests.
 
-import 'package:DigiDoc/pages/starterpage.dart';
-import 'package:DigiDoc/widgets/listOfSuggestions.dart';
-import 'package:DigiDoc/functions/signinfunction.dart';
+import 'package:digidoc/pages/starterpage.dart';
+import 'package:digidoc/widgets/listOfSuggestions.dart';
+import 'package:digidoc/functions/signinfunction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

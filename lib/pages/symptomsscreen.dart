@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:DigiDoc/functions/api_service.dart';
-import 'package:DigiDoc/pages/predictedpage.dart';
+import 'package:digidoc/functions/api_service.dart';
+import 'package:digidoc/pages/predictedpage.dart';
 import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
 import 'package:geolocator/geolocator.dart';
 

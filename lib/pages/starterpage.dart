@@ -1,5 +1,5 @@
-import 'package:DigiDoc/pages/doctorsigninpage.dart';
-import 'package:DigiDoc/pages/singninpage.dart';
+import 'package:digidoc/pages/doctorsigninpage.dart';
+import 'package:digidoc/pages/singninpage.dart';
 import 'package:flutter/material.dart';
 
 class StarterPage extends StatefulWidget {
