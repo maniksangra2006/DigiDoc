@@ -1,0 +1,49 @@
+from flask import Flask, request, jsonify
+import pickle
+
+app = Flask(__name__)
+
+# Model aur symptoms load karo
+model = pickle.load(open("model.pkl", "rb"))
+all_symptoms = pickle.load(open("symptoms.pkl", "rb"))
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json          # ← 4 spaces
+    symptoms = data['symptoms']  # ← 4 spaces
+    
+    # One hot encoding
+    input_vector = [1 if s in symptoms else 0 for s in all_symptoms]
+    
+    # Predict karo
+    prediction = model.predict([input_vector])
+    
+    return jsonify({             # ← 4 spaces
+        "success": True,         # ← 8 spaces
+        "disease": prediction[0] # ← 8 spaces
+    })                           # ← 4 spaces
+
+if __name__ == "__main__":
+    app.run(debug=True)          # ← 4 spaces
+from flask import Flask, request, jsonify
+import pickle
+
+app = Flask(__name__)
+
+model = pickle.load(open("model.pkl", "rb"))
+all_symptoms = pickle.load(open("symptoms.pkl", "rb"))
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    symptoms = data['symptoms']
+    input_vector = [1 if s in symptoms else 0 for s in all_symptoms]
+    prediction = model.predict([input_vector])
+    return jsonify({
+        "success": True,
+        "disease": prediction[0]
+    })
+
+if __name__ == "__main__":
+    app.run(debug=True)
+

@@ -1,0 +1,36 @@
+name: DigiDoc
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  firebase_core: ^2.7.0
+  firebase_auth: ^4.2.9
+  google_sign_in: ^6.0.1
+  cloud_firestore: ^4.4.3
+  font_awesome_flutter: ^10.4.0
+  geolocator: ^9.0.2
+  flutter_typeahead: ^6.0.0
+  geoflutterfire_plus: 0.0.3
+  units_converter: ^2.1.0
+  maps_launcher: ^2.2.0
+  url_launcher: ^6.1.11
+  shared_preferences: ^2.2.0
+  wikipedia: ^0.0.7
+  expandable_text: ^2.3.0
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true

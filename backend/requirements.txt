@@ -1,0 +1,11 @@
+flask
+flask-cors
+scikit-learn
+pandas
+numpy
+fastapi
+uvicorn
+sqlalchemy
+PyJWT
+requests
+psycopg2-binary

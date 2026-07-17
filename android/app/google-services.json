@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "458572347365",
+    "project_id": "digidoc-1202a",
+    "storage_bucket": "digidoc-1202a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458572347365:android:d2f6e92d23377a6607210c",
+        "android_client_info": {
+          "package_name": "com.example.codesageuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458572347365-9opt8ocnm194dh754hfvqncki4nt5fjb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.codesageuser",
+            "certificate_hash": "b4a1c5d5b75e7c22e3edcc8a915707a8b05ef8e2"
+          }
+        },
+        {
+          "client_id": "458572347365-87jn11i7hj73i3es9e43ks9adcuff1o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJDEPJlzk3UbAbbiaqJDnp8tuxftyJi8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458572347365-87jn11i7hj73i3es9e43ks9adcuff1o2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "458572347365-uvnbors1bfcttne9nf177scgrqoebhbm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.codesageuser"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
