@@ -1,26 +1,98 @@
-## DigiDoc
+# 🩺 DigiDoc — AI-Powered Healthcare & Appointment Platform
 
- 
+DigiDoc is a production-grade, end-to-end healthcare system built to simplify disease analysis and doctor matchmaking. Powered by a **K-Nearest Neighbors (KNN) Machine Learning Classifier** on the backend and a premium **Flutter UI** on the frontend, DigiDoc lets patients diagnose potential conditions, find nearby matching specialists, and instantly book consultations.
 
-The app is a disease prediction and doctor search tool that helps patients identify their health issues and find appropriate medical help nearby. Patients can input their symptoms using a text input field with autocomplete or suggestion functionality, and the app uses machine learning algorithms to provide a list of potential diseases. The app also suggests doctors located nearby based on the patient's location and helps them schedule an appointment with the doctor. Doctors can also register their location, specialty, and availability in the app, making it easier for patients to find them. The app provides an intuitive and user-friendly interface to help patients manage their health and get the care they need.
+---
 
-## Problem Statement
-The increasing burden of disease and the need for prompt and accurate diagnosis is a major concern in the healthcare industry. With the rapid advancements in technology, there is a growing need for a mobile application that can help patients diagnose their symptoms and find a suitable doctor in their vicinity. The current system of seeking medical advice often involves visiting multiple doctors, waiting in long queues, and facing limitations in terms of time and availability.
+## 🏗️ System Architecture
 
-Therefore, there is a need for an application that can provide a comprehensive and personalized solution to the patient's health problems. The app should be able to predict the disease of a patient based on their symptoms and provide suggestions for the most suitable doctor nearby. The app should be user-friendly and accessible to all, regardless of their location or technical expertise. It should also be able to provide accurate and up-to-date information to the users, and help bridge the gap between patients and healthcare providers.
+```mermaid
+graph TD
+    A[Flutter App] -->|1. Submit Symptoms / Fetch Slots| B[FastAPI Backend]
+    A -->|3. Firebase Token Session| C[Firebase Auth]
+    B -->|2. Query Clinics & Bookings| D[(PostgreSQL / SQLite)]
+    B -->|4. Classify Symptoms| E[KNN ML Model]
+```
 
-## Tech Stack :paperclip:
+---
 
-The app uses a variety of technologies to provide a seamless and efficient user experience. Here are some of the technologies used in this app:
+## ✨ Features
 
-* Flutter: Flutter is a cross-platform development framework and because of the fact that flutter is very good for rapid prototyping we decided to use it for development of our application.
+### 1. Persistent Sessions & Auto-Login 🔑
+- **Seamless Restarts**: Integrates local storage caching (`shared_preferences`) to serialize and restore user profiles (`uid`, `role`, `name`, `email`, `specialty`) on startup. Bypasses login screens automatically during hot restarts and app launches.
+- **Role-Based Routing**: Dynamically directs cached sessions to the **Patient Home Panel** or the **Doctor Home Panel**.
 
-* Firebase: Firebase is a cloud-based backend service provided by Google that offers various features, including authentication, database, hosting, and storage. The app uses Firebase to store and manage user data, including doctor and patient information and most importantly storing their geo location.
+### 2. Smart Symptoms Picker (Phase 2) 🤒
+- **Dynamic Search**: Instant local real-time autocomplete filtering across **133 categorized symptoms** with zero network delay.
+- **Fluid Layout**: Selected symptoms are displayed as interactive, dismissible chips at the top of the interface.
 
-* Machine Learning: We have used Logistic Regression to develop the ML model for predicting the disease. The dataset we have used for this model contains 4.5K+ combinations of 133 symptoms and based on these symptoms their mapping to different disease.
+### 3. ML Disease Diagnosis (Phase 3 & 4) 🧬
+- **Multi-Disease Classifications**: Runs `model.predict_proba()` to compute and return a ranked list of possible matching diagnoses.
+- **Rich Medical Analytics**: Cards render green visual progress bars indicating confidence percentages, descriptions, bulleted lists of precautions, and recommended specialties.
 
-* Geolocation: The app uses geolocation technology to determine the user's location and suggest nearby doctors based on their location. This is implemented using the geolocator package of flutter.
+### 4. Geolocation & Clinic Mapping (Phase 5) 📍
+- **Proximity Sorting**: Uses the **Haversine Formula** to query, calculate, and sort matching specialty clinics based on GPS coordinates.
+- **In-App Controls**: Triggers phone calls via native dialers, matches coordinates on Google Maps via maps launcher, and displays clinic distances.
 
-* REST APIs: The app uses REST APIs to communicate with the backend server and retrieve and store data. This allows for efficient data transfer and management between the app and the server. The ML model we have developed has been written in Python and to connect that ML model with flutter app we used Flask and hosted that flask server using ngrok.
+### 5. Collision-Free Slot Scheduler (Phase 6) 📅
+- **Dynamic Hour Checking**: Select a preferred calendar date to query the SQL database. Booked hours are filtered out, displaying only available slots to the patient.
+- **Concurrency Protection**: Double-booking validator protects slots from concurrent request collisions.
 
- 
+### 6. Timeline Appointment Log (Phase 7) 🔄
+- **Unified Log**: Patients review booking history and cancel pending slots.
+- **Doctor Controls**: Doctors accept patient requests (confirming the slot) or decline/cancel consultations.
+
+---
+
+## 🛠️ Technology Stack
+
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | Flutter (Dart) | Responsive mobile & web UI (Cupertino/Material) |
+| **Local Cache** | SharedPreferences | Persisted offline login sessions |
+| **Backend** | FastAPI (Python 3.10+) | Secure RESTful API routing |
+| **ORM Database** | SQLAlchemy & PostgreSQL | Relational schema mapping (SQLite fallback) |
+| **ML Engine** | Scikit-Learn | KNN Machine Learning Classifier |
+| **Auth Gateway** | Firebase Auth | Email/Password credentials auth |
+
+---
+
+## 🚀 Installation & Local Run
+
+### 1. Prerequisites
+- **Flutter SDK**: [Install Flutter](https://docs.flutter.dev/get-started/install)
+- **Python**: Version 3.10 or higher
+- **Android SDK / Emulator** (or connected USB debugging phone)
+
+### 2. Starting the Backend Server
+```bash
+cd backend
+# Create virtual environment and activate
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the FastAPI server
+uvicorn main:app --reload
+```
+*Verify the console outputs: `Uvicorn running on http://127.0.0.1:8000`*
+
+### 3. Running the Flutter App (With USB Debugging Phone)
+If you are testing the app on a physical Android phone connected via USB:
+
+1. **Establish USB Port Forwarding**:
+   ```bash
+   adb reverse tcp:8000 tcp:8000
+   ```
+2. **Launch the Application**:
+   ```bash
+   flutter run
+   ```
+
+---
+
+## 📜 Deployment
+
+Complete deployment guides for hosting your FastAPI server on platforms like **Railway** or **Render** and compilation parameters for generating production APKs are documented in the [Deployment Guide](file:///Users/maniksangra/Downloads/DigiDoc-main/backend/deployment_guide.md).
