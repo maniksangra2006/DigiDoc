@@ -1,6 +1,6 @@
 {
-    "name": "codesageuser",
-    "short_name": "codesageuser",
+    "name": "DigiDoc",
+    "short_name": "DigiDoc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
