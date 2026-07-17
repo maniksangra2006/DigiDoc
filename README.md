@@ -95,4 +95,4 @@ If you are testing the app on a physical Android phone connected via USB:
 
 ## 📜 Deployment
 
-Complete deployment guides for hosting your FastAPI server on platforms like **Railway** or **Render** and compilation parameters for generating production APKs are documented in the [Deployment Guide](file:///Users/maniksangra/Downloads/DigiDoc-main/backend/deployment_guide.md).
+Complete deployment guides for hosting your FastAPI server on platforms like **Railway** or **Render** and compilation parameters for generating production APKs are documented in the [Deployment Guide](file:///Users/maniksangra/Downloads/DigiDoc-main/deployment_guide.md).
