@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 class AppConfig {
   /// Base URL for the DigiDoc FastAPI backend.
-  static String get baseUrl => 'http://localhost:8000';
+  static String get baseUrl => 'https://digidoc-backend-l974.onrender.com';
 
   /// Toggle for developer mode tokens during local testing.
   /// If true, uses unverified dev-mode tokens to bypass Firebase signature validation
